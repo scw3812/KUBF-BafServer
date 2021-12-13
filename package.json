@@ -1,0 +1,33 @@
+{
+  "name": "dopdop_server",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "NODE_ENV=production PORT=8001 pm2 start app.js",
+    "dev": "nodemon app",
+    "restart": "NODE_ENV=production PORT=8001 pm2 restart app --update-env"
+  },
+  "author": "scw3812",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^9.0.2",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "hpp": "^0.2.3",
+    "luxon": "^2.1.0",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.2.5",
+    "pm2": "^4.5.6",
+    "request": "^2.88.2",
+    "sequelize": "^6.6.2",
+    "sequelize-cli": "^6.2.0",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
