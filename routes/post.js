@@ -1,7 +1,7 @@
 const express = require("express");
-const { col } = require("sequelize");
+const { col, Op } = require("sequelize");
 const { Post, User } = require("../models");
-const { wrapAsync, makeError } = require("../utils");
+const { wrapAsync } = require("../utils");
 
 const router = express.Router();
 
@@ -20,6 +20,7 @@ router.get(
   "/latest",
   wrapAsync(async (req, res) => {
     const post = await Post.findOne({
+      where: { categoryId: { [Op.not]: 4 } },
       attributes: [
         "id",
         "title",

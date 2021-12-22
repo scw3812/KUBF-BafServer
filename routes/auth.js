@@ -19,9 +19,9 @@ router.post(
       throw makeError("잘못된 비밀번호입니다.", 403);
     }
 
-    const { nickname, id } = user;
+    const { id, name, nickname, isAdmin } = user;
 
-    return res.status(200).json({ nickname, id });
+    return res.status(200).json({ id, name, nickname, isAdmin });
   })
 );
 

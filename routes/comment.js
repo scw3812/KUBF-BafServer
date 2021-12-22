@@ -10,9 +10,9 @@ router.post(
   wrapAsync(async (req, res) => {
     const { userId, content, postId } = req.body;
 
-    await Comment.create({ userId, content, postId });
+    const comment = await Comment.create({ userId, content, postId });
 
-    return res.status(201).json({});
+    return res.status(201).json({ id: comment.id });
   })
 );
 
